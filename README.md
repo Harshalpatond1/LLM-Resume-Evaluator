@@ -1,4 +1,4 @@
-# LLM-Resume-Evaluator
+
 #  AI Resume Evaluator
 
 An AI-powered resume evaluation system that analyzes resumes against a given job description and generates a candidate match score.
@@ -12,7 +12,7 @@ The system uses **Groq API with the Qwen model** to extract structured informati
 *  Extracts structured information from job descriptions
 *  Identifies candidate skills, education, experience, projects, and certifications
 *  Compares resumes with job requirements
-*  Generates an overall candidate match score from **0–100**
+*  Generates an overall candidate match score from **0â€“100**
 *  Identifies matching skills
 *  Identifies missing important skills
 *  Checks whether the candidate meets the experience requirement
@@ -66,16 +66,16 @@ Top 2 / Lowest 2 Candidates
 ```text
 AI-Resume-Evaluator/
 ?
-??? resumes/
-?   ??? abhay resume.pdf
-?   ??? ashish raj.pdf
-?   ??? anshit verma.docx
+resumes/
+?    abhay resume.pdf
+?    ashish raj.pdf
+?    anshit verma.docx
 ?
-??? .env
-??? .gitignore
-??? requirements.txt
-??? main.py
-??? README.md
+.env
+.gitignore
+requirements.txt
+main.py
+README.md
 ```
 
 > Rename your Python file to `main.py` if it currently has another name.
@@ -168,10 +168,10 @@ Example:
 
 ```text
 resumes/
-??? abhay resume.pdf
-??? ashish raj.pdf
-??? anshit verma.docx
-??? priyanshu singh.pdf
+-abhay resume.pdf
+-ashish raj.pdf
+-anshit verma.docx
+-priyanshu singh.pdf
 ```
 
 ##  Run the Project
