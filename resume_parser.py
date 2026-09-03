@@ -76,3 +76,30 @@ If minimum experience is not mentioned, return null.
 If information for a list is missing, return an empty list.
 Do not invent information.
 """
+user_prompt = f"""
+Analyze the following job description:
+
+{job_description}
+"""
+message_system={
+    "role" : "system",
+    "content" : system_prompt
+}
+message_user={
+    "role" : "user",
+    "content" : user_prompt
+}
+response_format={
+    "type" : "json_object"
+}
+
+
+messages=[message_system, message_user]
+
+response=client.chat.completions.create(model=model, messages=messages, response_format=response_format)
+
+
+answer=response.choices[0].message.content
+
+raw_json=answer
+# print(raw_json)
