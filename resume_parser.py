@@ -47,3 +47,13 @@ Preferred Qualifications
 - Strong problem-solving and analytical skills
 - Excellent written and verbal communication skills
 """
+
+class JobD(BaseModel):
+    role: str
+    required_skills: list[str]
+    preferred_skills: list[str]
+    minimum_experience: float | None
+    education_requirements: list[str]
+    responsibilities: list[str]
+
+jobd_schema = JobD.model_json_schema()
