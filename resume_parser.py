@@ -229,3 +229,52 @@ def parse_resume(resume_text):
     data = json.loads(raw_output)
     resume = Resume(**data)
     return resume
+
+try:
+    from importlib import import_module
+
+    PdfReader = import_module("pypdf").PdfReader
+except ImportError:
+    # Support environments that still provide the package under its legacy name.
+    PdfReader = import_module("PyPDF2").PdfReader
+try:
+    Document = import_module("docx").Document
+except ImportError:
+    Document = None
+
+def read_pdf(file_path):
+    reader = PdfReader(file_path)
+    text = ""
+    for page in reader.pages:
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text + "\n"
+    return text
+
+def read_docx(file_path):
+    if Document is None:
+        raise ImportError(
+            "Reading DOCX files requires python-docx. Install it with: pip install python-docx"
+        )
+    document = Document(file_path)
+    text = ""
+    for paragraph in document.paragraphs:
+        if paragraph.text.strip():
+            text += paragraph.text + "\n"
+    
+    for table in document.tables:
+        for row in table.rows:
+            for cell in row.cells:
+                if cell.text.strip():
+                    text += cell.text + "\n"
+    return text
+
+
+def read_resume(file_path):
+    if file_path.suffix.lower() == ".pdf":
+        return read_pdf(file_path)
+    elif file_path.suffix.lower() == ".docx":
+        return read_docx(file_path)
+    else:
+        return None
+
