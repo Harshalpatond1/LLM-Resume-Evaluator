@@ -1,26 +1,26 @@
 # LLM-Resume-Evaluator
-# ?? AI Resume Evaluator
+#  AI Resume Evaluator
 
 An AI-powered resume evaluation system that analyzes resumes against a given job description and generates a candidate match score.
 
 The system uses **Groq API with the Qwen model** to extract structured information from job descriptions and resumes, compare candidate skills and experience, and rank candidates based on their overall match percentage.
 
-## ?? Features
+##  Features
 
-* ?? Extracts information from **PDF and DOCX resumes**
-* ?? Uses **AI/LLM for resume parsing**
-* ?? Extracts structured information from job descriptions
-* ?? Identifies candidate skills, education, experience, projects, and certifications
-* ?? Compares resumes with job requirements
-* ?? Generates an overall candidate match score from **0–100**
-* ? Identifies matching skills
-* ? Identifies missing important skills
-* ?? Checks whether the candidate meets the experience requirement
-* ?? Displays the **Top 2 candidates**
-* ?? Displays the **Lowest 2 candidates**
-* ?? Returns structured JSON using Pydantic models
+*  Extracts information from **PDF and DOCX resumes**
+*  Uses **AI/LLM for resume parsing**
+*  Extracts structured information from job descriptions
+*  Identifies candidate skills, education, experience, projects, and certifications
+*  Compares resumes with job requirements
+*  Generates an overall candidate match score from **0–100**
+*  Identifies matching skills
+*  Identifies missing important skills
+*  Checks whether the candidate meets the experience requirement
+*  Displays the **Top 2 candidates**
+*  Displays the **Lowest 2 candidates**
+*  Returns structured JSON using Pydantic models
 
-## ??? Technologies Used
+##  Technologies Used
 
 | Technology     | Purpose                               |
 | -------------- | ------------------------------------- |
@@ -33,7 +33,7 @@ The system uses **Groq API with the Qwen model** to extract structured informati
 | python-docx    | Extracts text from DOCX resumes       |
 | JSON           | Handles structured AI responses       |
 
-## ?? How It Works
+##  How It Works
 
 The application follows these main steps:
 
@@ -61,7 +61,7 @@ Rank Candidates
 Top 2 / Lowest 2 Candidates
 ```
 
-## ?? Project Structure
+##  Project Structure
 
 ```text
 AI-Resume-Evaluator/
@@ -80,7 +80,7 @@ AI-Resume-Evaluator/
 
 > Rename your Python file to `main.py` if it currently has another name.
 
-## ?? Installation
+##  Installation
 
 ### 1. Clone the Repository
 
@@ -123,7 +123,7 @@ Then install everything using:
 pip install -r requirements.txt
 ```
 
-## ?? API Key Setup
+##  API Key Setup
 
 Create a `.env` file in the project root:
 
@@ -133,7 +133,7 @@ GROQ_API_KEY=your_groq_api_key_here
 
 The application loads the API key using `python-dotenv` and creates the Groq client from it.
 
-### ?? Important
+###  Important
 
 Never upload your `.env` file or API key to GitHub.
 
@@ -145,7 +145,7 @@ venv/
 __pycache__/
 ```
 
-## ?? Adding Resumes
+##  Adding Resumes
 
 Create a folder named:
 
@@ -174,7 +174,7 @@ resumes/
 ??? priyanshu singh.pdf
 ```
 
-## ?? Run the Project
+##  Run the Project
 
 After activating the virtual environment and adding your resumes:
 
@@ -204,7 +204,7 @@ Candidate 4 - 48.0 %
 Candidate 5 - 42.0 %
 ```
 
-## ?? Resume Information Extracted
+##  Resume Information Extracted
 
 The AI extracts information such as:
 
@@ -224,7 +224,7 @@ The AI extracts information such as:
 
 These fields are represented using Pydantic models in the application.
 
-## ?? Job Description Analysis
+##  Job Description Analysis
 
 The job description is converted into structured information including:
 
@@ -237,7 +237,7 @@ The job description is converted into structured information including:
 
 If experience is not mentioned, the system is instructed to return `null`, and missing list information is returned as an empty list.
 
-## ?? Candidate Evaluation
+##  Candidate Evaluation
 
 For every candidate, the system evaluates:
 
@@ -250,7 +250,7 @@ For every candidate, the system evaluates:
 
 The final results are sorted from the highest score to the lowest score.
 
-## ?? Security
+##  Security
 
 * Keep your Groq API key inside `.env`
 * Never commit `.env` to GitHub
@@ -261,19 +261,19 @@ The final results are sorted from the highest score to the lowest score.
 
 Possible improvements for this project:
 
-* ?? Build a web interface using FastAPI + HTML/CSS/JavaScript
-* ?? Allow users to upload resumes through the website
-* ?? Add candidate comparison dashboards
-* ?? Add graphical score visualization
-* ?? Add job-specific skill recommendations
-* ?? Generate improvement suggestions for candidates
-* ??? Store candidate results in a database
-* ?? Add email notifications
-* ?? Add user authentication
-* ? Process multiple resumes efficiently
-* ?? Generate downloadable candidate evaluation reports
+*  Build a web interface using FastAPI + HTML/CSS/JavaScript
+*  Allow users to upload resumes through the website
+*  Add candidate comparison dashboards
+*  Add graphical score visualization
+*  Add job-specific skill recommendations
+*  Generate improvement suggestions for candidates
+*  Store candidate results in a database
+*  Add email notifications
+*  Add user authentication
+*  Process multiple resumes efficiently
+*  Generate downloadable candidate evaluation reports
 
-## ?? Current Limitations
+## Current Limitations
 
 * The job description is currently provided directly inside the Python code.
 * Resumes must be placed manually inside the `resumes` folder.
@@ -282,12 +282,12 @@ Possible improvements for this project:
 * A fixed delay is used between API requests.
 * There is currently no web-based user interface.
 
-## ????? Project Purpose
+##  Project Purpose
 
 This project demonstrates how **Generative AI, Large Language Models, structured data extraction, and document processing** can be combined to automate the initial resume screening process.
 
 It can help recruiters quickly identify candidates whose skills and experience are most closely aligned with a particular job description.
 
-## ?? License
+##  License
 
 This project is created for educational and project-development purposes.
